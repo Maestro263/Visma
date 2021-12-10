@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300&family=Roboto:wght@300&display=swap");
+
+* {
+  text-align: center;
+  background-color: black;
+  color: yellow;
+}
+
+.navigation {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  a {
+    text-decoration: none;
+  }
+  .logo {
+    font-family: "Anton", bold;
+    padding: 10px;
+  }
+
+  .pages {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+
+    li {
+      border-radius: 24%;
+      font-family: "Poppins";
+
+      a {
+        padding: 15px;
+      }
+      a:hover {
+        color: black;
+        cursor: pointer;
+        background-color: lightgray;
+      }
+    }
+  }
+}
