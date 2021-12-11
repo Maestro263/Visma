@@ -1,19 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 const Person = () => {
-  const [Persons, fetchPersons] = useState([]);
-
-  const getData = () => {
-    fetch("https://swapi.dev/api/people")
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-        fetchPersons(res);
-      });
-  };
+  const [persons, setPersons] = useState([]);
 
   useEffect(() => {
-    getData();
+    fetch("https://swapi.dev/api/people/")
+      .then((res) => res.json())
+      .then((res) => {
+        setPersons(res.results);
+      });
   }, []);
 
   return (
@@ -21,7 +16,7 @@ const Person = () => {
       <h1>Persons from Star Wars</h1>
 
       <ul>
-        {Persons.map((item, i) => {
+        {persons.map((item, i) => {
           return <li key={i}>{item.name}</li>;
         })}
       </ul>
