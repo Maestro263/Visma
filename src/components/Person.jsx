@@ -14,7 +14,6 @@ const Person = () => {
   return (
     <div>
       <h1>Persons from Star Wars</h1>
-
       <ul>
         {persons.map((item, i) => {
           return <li key={i}>{item.name}</li>;
